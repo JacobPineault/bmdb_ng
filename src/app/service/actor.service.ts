@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { JsonResponse } from '../model/json-response.class';
-import { Movie } from '../model/movie.class';
+import { Observable } from 'rxjs';
+import { Actor } from '../model/actor.class';
 
-const url: string = 'http://localhost:8080/movies/';
+const url: string = 'http://localhost:8080/actors/';
 
 @Injectable({
   providedIn: 'root',
 })
-export class MovieService {
+export class ActorService {
   constructor(private http: HttpClient) {}
 
   list(): Observable<JsonResponse> {
@@ -20,12 +20,12 @@ export class MovieService {
     return this.http.get(url + id) as Observable<JsonResponse>;
   }
 
-  create(movie: Movie): Observable<JsonResponse> {
-    return this.http.post(url, movie) as Observable<JsonResponse>;
+  create(actor: Actor): Observable<JsonResponse> {
+    return this.http.post(url, actor) as Observable<JsonResponse>;
   }
 
-  edit(movie: Movie): Observable<JsonResponse> {
-    return this.http.put(url, movie) as Observable<JsonResponse>;
+  edit(actor: Actor): Observable<JsonResponse> {
+    return this.http.put(url, actor) as Observable<JsonResponse>;
   }
 
   delete(id: number): Observable<JsonResponse> {
