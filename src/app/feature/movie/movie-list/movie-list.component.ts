@@ -8,9 +8,13 @@ import { Movie } from 'src/app/model/movie.class';
 })
 export class MovieListComponent implements OnInit {
   // movies will hold out list of movies from backend
+  // will be one way boumd to html to provide a table view of movies
   movies: Movie[] = [];
 
   constructor() {}
 
-  ngOnInit(): void {}
+  // service calls for the page
+  ngOnInit(): void {
+    // call out movie service to populate the list of movies
+  }
 }
