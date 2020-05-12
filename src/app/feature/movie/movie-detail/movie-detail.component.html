@@ -1,0 +1,59 @@
+<p>movie-detail works!</p>
+<div *ngIf="movie" class="component">
+  <section class="heading">
+    <span class="page-title front weight-bold font-italic">{{ title }}</span>
+    <span> | <a routerLink="movie/list">Return to List</a></span>
+  </section>
+  <main class="single">
+    <table class="table table-sm">
+      <tr>
+        <td>ID</td>
+        <td>{{ movie.id }}</td>
+      </tr>
+      <tr>
+        <td>Title:</td>
+        <td>
+          <input
+            [(ngModel)]="movie.title"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Rating:</td>
+        <td>
+          <input
+            [(ngModel)]="movie.rating"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Year:</td>
+        <td>
+          <input
+            [(ngModel)]="movie.year"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Director:</td>
+        <td>
+          <input
+            [(ngModel)]="movie.director"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+    </table>
+  </main>
+</div>
