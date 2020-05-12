@@ -11,5 +11,11 @@ export class Actor {
     lastName: string = '',
     gender: string = '',
     birthDate: Date = null
-  ) {}
+  ) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.gender = gender;
+    this.birthDate = birthDate;
+  }
 }
