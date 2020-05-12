@@ -24,8 +24,9 @@ export class MovieCreateComponent implements OnInit {
       // if fjr.errors is null, save was successful
       if (jr.errors == null) {
         // success
+        this.router.navigateByUrl('/movie/list');
       } else {
-        console.log('Error creating new movie: ', this.movie);
+        console.log('***Error creating new movie.***', this.movie, jr.errors);
       }
     });
   }
