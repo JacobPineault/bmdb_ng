@@ -1,0 +1,46 @@
+<section class="heading">
+  <span class="page-title front weight-bold font-italic">[{{ title }}]</span>
+  <a routerLink="/credit/create"
+    ><img
+      width="20"
+      height="20"
+      src="assets/add-icon.png"
+      title="Add New Credit"
+    />
+  </a>
+</section>
+<table *ngIf="credits" class="table table-sm table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Actors</th>
+      <th>Movies</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let credit of credits">
+      <td>{{ credit.id }}</td>
+      <td>{{ credit.actor.lastName }}, {{ credit.actor.firstName }}</td>
+      <td>{{ credit.movie.title }}</td>
+      <td>{{ credit.role }}</td>
+      <td>
+        <a routerLink="/credit/detail/{{ credit.id }}"
+          ><img
+            width="20"
+            height="20"
+            src="assets/details.png"
+            title="Credit Details"
+        /></a>
+        |
+        <a routerLink="/credit/edit/{{ credit.id }}"
+          ><img
+            width="20"
+            height="20"
+            src="assets/pencil-icon.png"
+            title="Edit Credit"
+        /></a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,117 @@
+<div *ngIf="credit" class="component">
+  <section class="heading">
+    <span class="page-title front weight-bold font-italic">{{ title }}</span>
+    <span> | <a routerLink="credit/list">Return to List</a></span>
+  </section>
+  <main class="single">
+    <table class="table table-sm">
+      <tr>
+        <td>ID</td>
+        <td>{{ credit.id }}</td>
+      </tr>
+      <tr>
+        <td>First Name:</td>
+        <td>
+          <input
+            [(ngModel)]="credit.actor.firstName"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td>
+          <input
+            [(ngModel)]="credit.actor.lastName"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Gender:</td>
+        <td>
+          <input
+            [(ngModel)]="credit.actor.gender"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Birth Date:</td>
+        <td>
+          <input
+            [(ngModel)]="credit.actor.birthDate"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Title:</td>
+        <td>
+          <input
+            [(ngModel)]="credit.movie.title"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Rating:</td>
+        <td>
+          <input
+            [(ngModel)]="credit.movie.rating"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Year:</td>
+        <td>
+          <input
+            [(ngModel)]="credit.movie.year"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Director:</td>
+        <td>
+          <input
+            [(ngModel)]="credit.movie.director"
+            class="rounded"
+            type="text"
+            disabled
+          />
+        </td>
+      </tr>
+    </table>
+  </main>
+  <span>
+    <span
+      ><a
+        routerLink="/credit/edit{{ credit.id }}"
+        class="btn btn-sm btn-warning"
+        >Edit</a
+      ></span
+    >
+    <span>
+      |
+      <button (click)="delete()" class="btn btn-sm btn-danger">
+        Delete
+      </button></span
+    >
+  </span>
+</div>
