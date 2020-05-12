@@ -5,13 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './feature/movie/movie-list/movie-list.component';
-//import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-//import { Actor } from './model/actor.class/actor.class.component';
 import { ActorListComponent } from './feature/actor/actor-list/actor-list.component';
+import { CreditListComponent } from './feature/credit/credit-list.component';
 
 @NgModule({
-  declarations: [AppComponent, MovieListComponent, ActorListComponent],
+  declarations: [
+    AppComponent,
+    MovieListComponent,
+    ActorListComponent,
+    CreditListComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
