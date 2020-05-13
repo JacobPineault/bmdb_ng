@@ -33,7 +33,7 @@ export class CreditDetailComponent implements OnInit {
         console.log(jr.data as string);
         this.router.navigateByUrl('/credit/list');
       } else {
-        console.log('***Error deleting credit***', this.creditId, jr.errors);
+        console.log('***Error deleting Credit***', this.creditId, jr.errors);
       }
     });
   }
