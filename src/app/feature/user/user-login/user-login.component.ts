@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user.class';
 import { UserService } from 'src/app/service/user.service';
 import { Route } from '@angular/compiler/src/core';
+import { SystemService } from 'src/app/service/system.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login',
@@ -12,7 +14,30 @@ export class UserLoginComponent implements OnInit {
   message: string = '';
   user: User = new User();
 
-  constructor(private userSvc: UserService, private router: Route) {}
+  constructor(
+    private userSvc: UserService,
+    private router: Router,
+    private sysSvc: SystemService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //  default userName and password
+    this.user.userName = 'admin';
+    this.user.password = 'admin';
+    this.sysSvc.loggedInUser = null;
+  }
+
+  login() {
+    this.userSvc.login(this.user).subscribe((jr) => {
+      if (jr.errors == null) {
+        // successfull login
+        this.user = jr.data as User;
+        this.sysSvc.loggedInUser = this.user;
+        this.router.navigateByUrl('/home');
+      } else {
+        // login error, display in message
+        this.message = jr.errors as string;
+      }
+    });
+  }
 }
