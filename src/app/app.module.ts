@@ -19,6 +19,8 @@ import { CreditEditComponent } from './feature/credit/credit-edit/credit-edit.co
 import { CreditListComponent } from './feature/credit/credit-list/credit-list.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { SortPipe } from './pipe/sort.pipe';
+import { BaseComponent } from './feature/base/base.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { UserLoginComponent } from './feature/user/user-login/user-login.compone
     CreditEditComponent,
     MenuComponent,
     UserLoginComponent,
+    SortPipe,
+    BaseComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
